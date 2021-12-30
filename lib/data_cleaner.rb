@@ -7,6 +7,10 @@ module DataCleaner
   def clean_name(name)
     name.capitalize
   end
+
+  def clean_phone(phone)
+    phone.scan(/\d/).join("")
+  end
   #
   # contents = CSV.open 'event_attendees.csv', headers: true, header_converters: :symbol
   #

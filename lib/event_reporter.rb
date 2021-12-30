@@ -22,7 +22,7 @@ class EventReporter
       @event_attendees[row[:id].to_i][:last_name] = clean_name(row[:last_name])
       @event_attendees[row[:id].to_i][:full_name] = "#{clean_name(row[:first_name])} #{clean_name(row[:last_name])}"
       @event_attendees[row[:id].to_i][:email_address] = row[:email_address]
-      @event_attendees[row[:id].to_i][:home_phone] = row[:homephone]
+      @event_attendees[row[:id].to_i][:home_phone] = clean_phone(row[:homephone])
       @event_attendees[row[:id].to_i][:street] = row[:street]
       @event_attendees[row[:id].to_i][:city] = row[:city]
       @event_attendees[row[:id].to_i][:state] = row[:state]
@@ -30,6 +30,13 @@ class EventReporter
     end
   end
 
-  
+  # def find(attribute, criteria)
+  #   queue_clear
+  # end
+  #
+  #
+  # def queue_clear
+  #   @queue = @queue.clear
+  # end
 
 end
